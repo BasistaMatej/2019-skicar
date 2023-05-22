@@ -12,6 +12,6 @@ public class Line extends Shape {
         super.paintComponent(g);
 
         g.setColor(color);
-        g.fillRect(0,this.getHeight()/3,this.getWidth(),this.getHeight()/10);
+        g.fillRect(0, this.getHeight() / 3, this.getWidth(), this.getHeight() / 10);
     }
 }

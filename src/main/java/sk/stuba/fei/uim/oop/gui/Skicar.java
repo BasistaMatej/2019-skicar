@@ -7,6 +7,7 @@ import java.awt.*;
 
 public class Skicar {
     private static final int FRAME_SIZE = 700;
+
     public Skicar() {
         JFrame frame = new JFrame("Skicar 2019");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,7 +16,7 @@ public class Skicar {
 
         GameLogic logic = new GameLogic();
         frame.add(new SideMenu(logic), BorderLayout.PAGE_START);
-        frame.add(logic.getDrawingPanel(),BorderLayout.CENTER);
+        frame.add(logic.getDrawingPanel(), BorderLayout.CENTER);
         frame.add(logic.getChangeColorButton(), BorderLayout.PAGE_END);
 
         frame.setFocusable(true);

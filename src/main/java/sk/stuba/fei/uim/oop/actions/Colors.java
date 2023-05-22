@@ -5,16 +5,16 @@ import lombok.Getter;
 import java.awt.*;
 
 public enum Colors {
-    GREEN(Color.GREEN,"Zelena"),
-    BLUE(Color.BLUE,"Modra"),
-    RED(Color.RED,"Červena");
+    GREEN(Color.GREEN, "Zelena"),
+    BLUE(Color.BLUE, "Modra"),
+    RED(Color.RED, "Červena");
 
     @Getter
     private String translateName;
     @Getter
     private Color color;
 
-    Colors(Color color,String translateName) {
+    Colors(Color color, String translateName) {
         this.translateName = translateName;
         this.color = color;
     }

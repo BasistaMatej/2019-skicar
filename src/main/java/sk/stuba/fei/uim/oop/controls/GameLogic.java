@@ -87,10 +87,10 @@ public class GameLogic extends UniversalAdapter {
                     this.currentAction = Actions.NONE;
                     break;
                 case CHANGE_COLOR:
-                    if((e.getSource() instanceof  JPanel))  {
+                    if ((e.getSource() instanceof JPanel)) {
                         for (JPanel shape : this.shapes) {
-                            if( e.getX() >= shape.getX() && (e.getX()  <= shape.getX()+shape.getWidth()) &&
-                                    e.getY() >= shape.getY() && (e.getY() <= shape.getY()+shape.getHeight())) {
+                            if (e.getX() >= shape.getX() && (e.getX() <= shape.getX() + shape.getWidth()) &&
+                                    e.getY() >= shape.getY() && (e.getY() <= shape.getY() + shape.getHeight())) {
                                 Shape activeShape = (Shape) shape;
                                 activeShape.setColor(Arrays.stream(Colors.values()).filter(color -> Objects.equals(color.getTranslateName(), colorChooser.getSelectedItem())).findFirst().get().getColor());
                                 this.drawingPanel.repaint();
@@ -105,7 +105,7 @@ public class GameLogic extends UniversalAdapter {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        if(e.getSource() instanceof JPanel && (this.currentAction == Actions.PLUS || this.currentAction == Actions.LINE) && !shapes.isEmpty()) {
+        if (e.getSource() instanceof JPanel && (this.currentAction == Actions.PLUS || this.currentAction == Actions.LINE) && !shapes.isEmpty()) {
             moveShapeOnBoard(e);
         }
     }
@@ -113,11 +113,11 @@ public class GameLogic extends UniversalAdapter {
     private void moveShapeOnBoard(MouseEvent e) {
         JPanel activeShape = shapes.get(shapes.size() - 1);
         this.drawingPanel.remove(activeShape);
-        shapeToSpecificPossition(activeShape,e);
+        shapeToSpecificPossition(activeShape, e);
     }
 
     private void shapeToSpecificPossition(JPanel shape, MouseEvent e) {
-        shape.setBounds(e.getX()-50,e.getY()-50,150,150);
+        shape.setBounds(e.getX() - 50, e.getY() - 50, 150, 150);
         this.drawingPanel.add(shape);
         this.drawingPanel.repaint();
     }
